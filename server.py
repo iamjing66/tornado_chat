@@ -28,7 +28,8 @@ class IndexHandler(RequestHandler):
             print('IndexHandler类 get_current_user获取到用户:', user)
             return user
 
-    @tornado.web.authenticated  #确认请求合法 依赖于get_current_user(self):函数的返回值作为判断请求是否合法
+    @tornado.web.authenticated
+    # 确认请求合法 依赖于get_current_user(self):函数的返回值作为判断请求是否合法
     def get(self):
         print("IndexHandler 收到GET请求")
         self.render("online_index.html", current_user=self.current_user)
@@ -53,9 +54,9 @@ class LoginHandler(RequestHandler):
         self.set_secure_cookie("count",
                                str(count))  # 设置一个带签名和时间戳的cookie，防止cookie被伪造。
 
-        #使用ajax方法做的前端
+        # 使用ajax方法做的前端
         # self.render('login_use_ajax.html')
-        #使用form表单提交数据 的前端
+        # 使用form表单提交数据 的前端
         self.render('login_use_form.html')
 
     def post(self, *args, **kwargs):
