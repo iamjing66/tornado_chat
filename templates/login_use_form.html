@@ -10,7 +10,8 @@
     <form action="/" method="post" onsubmit="return check_user()">
         {% module xsrf_form_html() %}
     <input id="username" name="username" placeholder="配置昵称,即可聊天">
-    <input id="conform_username" type="submit" value="确认昵称"  >
+    <input id="userpwd" name="userpwd">
+    <input id="conform_username" type="submit" value="确认"  >
     </form>
 
     <script>
