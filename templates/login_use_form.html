@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>登录聊天室</title>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 </head>
+
 <body>
     <!--使用form表单获取登录页-->
     <form action="/" method="post" onsubmit="return check_user()">
         {% module xsrf_form_html() %}
-    <input id="username" name="username" placeholder="配置昵称,即可聊天">
-    <input id="userpwd" name="userpwd">
-    <input id="conform_username" type="submit" value="确认"  >
+        <input id="username" name="username" placeholder="配置昵称,即可聊天">
+        <input id="userpwd" name="userpwd">
+        <input id="conform_username" type="submit" value="确认">
     </form>
 
     <script>
-        function check_user(){
-            $('#username').val($('#username').val().trim());//去除输入前后的空格
+        function check_user() {
+            $('#username').val($('#username').val().trim()); //去除输入前后的空格
             var username = $('#username').val();
-            if ( !username ){
+            if (!username) {
                 alert('昵称不能为空');
                 return false;
-            }else {
+            } else {
                 alert('昵称OK');
                 return true
             }
@@ -29,4 +31,5 @@
     </script>
 
 </body>
+
 </html>
